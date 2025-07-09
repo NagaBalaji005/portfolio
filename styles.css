@@ -264,21 +264,24 @@ section#about {
 }
 
 .about-grid {
-    display: grid;
-    grid-template-columns: 200px 1fr;
+    display: grid; /* Keep grid for larger screens */
+    grid-template-columns: 220px 1fr; /* Adjust to match profile-image width */
     gap: 2rem;
-    align-items: center;
-    justify-items: center;
+    align-items: center; /* This is key for vertical alignment */
+    justify-items: center; /* This helps center items horizontally within their grid cells */
     padding: 0 1rem;
 }
 
 .profile-image {
-    width: 220px;
-    height: 300px;
-    top: 50px;
+    width: 220px; /* Keep consistent with grid column */
+    height: 300px; /* Keep the desired height */
+    /* top: 50px; -- REMOVED */
     border-radius: 15px;
     overflow: hidden;
-    margin: 2rem 0;
+    margin: 0 auto; /* Center horizontally within its grid cell */
+    display: flex; /* Use flexbox to center the image itself if it's smaller than the container */
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-image img {
@@ -287,20 +290,65 @@ section#about {
     display: block;
     max-width: 220px;
     border-radius: 15px;
-    margin: 0 auto;
+    /* margin: 0 auto; -- Redundant if parent is flex-centered or grid-justified */
 }
 
 .about-text {
-    margin-left: 1.5rem;
-    color: var(--text-primary);
-    line-height: 1.8;
-    font-size: 18px;
-}
-
-.about-text {
+    margin-left: 1.5rem; /* Keep this if you want some spacing on larger screens */
     color: var(--text-primary);
     line-height: 1.8;
     font-size: 1.1rem;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+        text-align: center;
+        gap: 1rem; /* Reduce gap between image and text */
+        padding: 0 0.5rem; /* Adjust padding for mobile */
+    }
+
+    .profile-image {
+        width: 100%; /* Allow image container to take full width */
+        height: auto; /* Allow height to adjust */
+        max-width: 220px; /* Set a max-width for the image container on smaller screens */
+        margin: 0 auto 1rem auto; /* Center image horizontally and add bottom margin */
+        display: flex; /* Ensure flex properties are active */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-image img {
+        width: 70vw; /* Make image responsive to viewport width */
+        max-width: 220px; /* Max size for the image itself */
+        min-width: 120px;
+        margin: 0; /* Remove specific margin here, rely on parent's margin */
+    }
+
+    .about-text {
+        padding: 0.5rem; /* Adjust padding for mobile */
+        margin: 0; /* Remove left margin for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-grid {
+        gap: 0.5rem; /* Even less gap on very small screens */
+    }
+
+    .profile-image {
+        max-width: 180px; /* Smaller max-width for image container on very small screens */
+        margin: 0 auto 0.5rem auto; /* Adjust margin */
+    }
+
+    .profile-image img {
+        max-width: 180px;
+        min-width: 100px;
+    }
+    .about-text {
+        padding: 0.2rem; /* Even less padding on very small screens */
+    }
 }
 
 /* Education Section */
