@@ -250,6 +250,9 @@ section h2::after {
         width: 100%;
         margin: 0 auto;
     }
+    .profile-image {
+        margin-left: 2rem;
+    }
 }
 
 .about-grid {
