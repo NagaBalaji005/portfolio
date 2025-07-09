@@ -249,9 +249,11 @@ section h2::after {
         max-width: 800px;
         width: 100%;
         margin: 0 auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
-    .profile-image {
-        margin-left: 2rem;
+    .about-grid {
+        gap: 1.2rem;
     }
 }
 
