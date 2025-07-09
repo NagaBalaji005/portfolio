@@ -232,8 +232,9 @@ section h2::after {
 
 /* About Section */
 section#about {
-    padding-top: 40px;
+    padding-top: 100px;
     padding-bottom: 40px;
+    scroll-margin-top: 90px;
 }
 
 .about-content {
