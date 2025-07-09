@@ -257,6 +257,8 @@ section h2::after {
     grid-template-columns: 200px 1fr;
     gap: 2rem;
     align-items: center;
+    justify-items: center;
+    padding: 0 1rem;
 }
 
 .profile-image {
@@ -265,9 +267,7 @@ section h2::after {
     top: 50px;
     border-radius: 15px;
     overflow: hidden;
-    margin: 2rem auto 2rem;
-    border: 2px solid var(--primary-color);
-    float: left;
+    margin: 2rem 0;
 }
 
 .profile-image img {
